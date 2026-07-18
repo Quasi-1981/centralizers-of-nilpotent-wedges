@@ -72,6 +72,6 @@ text in full, and every number here has a probe in this repository.)
 `hub/prime/LIT_GATE_PREPRINT2_centralizer_map.md`).
 
 ---
-*The `.tex` is not compiled in this environment (no TeX toolchain) — it is a claim until a PDF is built.
-DOI and release date in `citation.yaml` are `TBD` placeholders finalized by the author on release (separate
-Zenodo DOI series).  — lane-C (Sigma), S987.*
+*A built `preprint2_en.pdf` (4 pp) ships in this repository. DOI and release date in `citation.yaml` are
+`TBD` placeholders, finalized by the author on the Zenodo release (separate DOI series). — lane-C (Sigma),
+S987; PDF built and verified, lane-B, S989.*
