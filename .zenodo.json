@@ -27,6 +27,10 @@
     {
       "name": "Claude Opus 4.8 (Anthropic)",
       "type": "Other"
+    },
+    {
+      "name": "Claude Fable 5 (Anthropic)",
+      "type": "Other"
     }
   ],
   "notes": "Text: CC-BY-4.0. Code: Apache-2.0. Contributors listed above are AI models used in the work; per-artifact attribution is recorded in the git history (Co-Authored-By trailers)."
