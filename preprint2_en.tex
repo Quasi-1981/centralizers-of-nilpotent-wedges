@@ -1,0 +1,133 @@
+% GENERATED from preprint2_en.md -- DO NOT EDIT BY HAND.
+% Edit the source (.md), then run: python src/tools/md_to_tex.py
+% Single column by design: two columns are not convenient for fast reading.
+% NOT COMPILED by the generator: the generating system has no TeX toolchain.
+%   Until a PDF is built somewhere, this file is a claim, not a result.
+\documentclass[11pt,a4paper,onecolumn]{article}
+% T2A is required, not decoration: the author's quotations are kept verbatim in
+% Ukrainian (the provenance is his own words), with an English gloss alongside.
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[main=english,ukrainian]{babel}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parskip}{0.55em}
+\setlength{\parindent}{0pt}
+% No \newcommand{\qed}: amsthm defines it, and redefining it is an error.
+\title{Centralizers of nilpotent wedges in real orthogonal Lie algebras so(p,q): a signature-resolved Levi-radical map\\[0.35em]\large\normalfont (Geometry of the vacuum, floor $-$1)}
+\author{Volodymyr Sobol}
+\date{\today}
+\begin{document}
+\maketitle
+\section*{Abstract}
+
+For a rank-2 nilpotent (a wedge N = x$\wedge $y) in a real orthogonal Lie algebra so(p,q), the centralizer c(N) decomposes as a reductive part in semidirect product with a nilradical --- a framework classical over algebraically closed fields (Springer--Steinberg; Collingwood--McGovern). We give the \emph{signature-resolved} so(p,q) form of this decomposition for the \emph{enumerated} signatures n = p+q $\leq $ 6: the non-abelian part is exhausted by four classes, each a 3-dimensional engine in semidirect product with a nilpotent module, falling into a dichotomy between the affine type so(p$'$,q$'$)$\ltimes $$\mathbb{R}$\textasciicircum{}\{d$'$\} and the Jacobi type sp(2m,$\mathbb{R}$)$\ltimes $h\_\{2m+1\}. The governing mechanism is obtained for all n in block-symbolic form (by solving [M,N] = 0, not by fitting). A signature biconditional --- \emph{for the soft (rank-1) family}, the reductive Levi is compact iff q = 1 --- follows from the definiteness of (p$-$2, q$-$1). The explicit isomorphisms are machine-verified (Lean/mathlib, kernel-checked; axioms [propext, Classical.choice, Quot.sound], no native\_decide). Three statements --- the signature-resolved dichotomy table, the all-n centralizer form, and the soft-family compact-Levi biconditional --- are absent from the literature surveyed (the nearest, \DJ{}okovi\'{c}--Lemire--Sekiguchi 2001, gives the closure order, not centralizer structure). No physical reading of any object is made or implied.
+
+
+\section*{\S{}1. Setup and framework}
+
+Let (V, $\eta $) be a real quadratic space of signature (p, q), n = p + q, and so(p, q) its orthogonal Lie algebra. A \emph{wedge} N = x$\wedge $y (rank-2 nilpotent, x, y isotropic and mutually orthogonal representatives) generates a nilpotent adjoint orbit; we study its centralizer c(N) = \{A $\in $ so(p,q) : [A, N] = 0\}.
+
+Over an algebraically closed field the structure c(N) = (reductive) $\ltimes $ (unipotent radical) is classical (Springer--Steinberg 1970; Collingwood--McGovern, Thm 6.1.3), with reductive parts tabulated by partition for the complex classical algebras. Our contribution is the \emph{real, signature-resolved} form: how the Levi$\ltimes $radical splits as a function of (p, q). The nearest classical real work, \DJ{}okovi\'{c}--Lemire--Sekiguchi 2001, classifies O(p,q)-orbits and their closure order (min(p,q) $\leq $ 7) but not the centralizer structure --- so the table below sits in a documented gap. (Explicit real centralizers are available for the exceptional algebras --- \DJ{}okovi\'{c} 1988 --- and Levi decompositions of nilpotent centralizers in classical groups are known over algebraically closed fields --- Babinski--Stewart 2016 --- but neither yields a signature-resolved so(p,q) table.)
+
+\textbf{Scope (load-bearing qualifiers).} All statements are for wedge nilpotents (rank N = 2); higher Jordan types are a named tail, out of scope. Strata are given by coordinate representatives; the invariants are representation-independent (checked on independent representatives of each class). The classical frames invoked --- Levi--Malcev decomposition, sl(2)-module theory, the classification of Heisenberg algebras --- are cited, not re-derived (multiplicity 0). Named objects that appear (Poincar\'{e} 2+1 = iso(2,1), Euclidean e(3), oscillator/Jacobi = so(2,1)$\ltimes $h$_{3}$) are \emph{flags} --- they emerged by measurement on degeneracy strata, not by assumption.
+
+\section*{\S{}2. The signature-resolved centralizer map}
+
+\textbf{Theorem (centralizer map, enumerated signatures n $\leq $ 6).} The non-abelian part of c(N) for a wedge N in so(p,q) is exhausted by four classes, each a 3-dimensional engine in semidirect product with a nilpotent module:
+
+\begin{itemize}
+\item \textbf{(i)} bare so(2,1) --- deep kernels ker = 2, mixed J2/J4;
+\item \textbf{(ii)} Levi $\ltimes $ $\mathbb{R}$$^{3}$ (irreducible 3): e(3) iff q = 1, iso(2,1) iff q $\geq $ 2 --- soft kernels ker = 4;
+\item \textbf{(iii)} so(2,1) $\ltimes $ h$_{3}$, with rad/Z the fundamental-2 (weights $\pm $1) --- deep (3,2);
+\item \textbf{(iv)} so(2,1) $\ltimes $ h$_{5}$, with rad/Z of type 2+2 (weights \{+1,+1,$-$1,$-$1\}, commutant-dim 4, min-cyclic 2; \emph{not} the irreducible spin-3/2) --- deep n = 6.
+\end{itemize}
+
+The solvable branch (no Levi factor) gives (4,1)r1 $\perp $ (3,2)r1 as \emph{distinct} algebras (the discriminant-form signature of ad on [L,L]: rotation $\pm $i elliptic $\perp $ boost $\pm $1 hyperbolic). The abelian case: soft ker = 2, and (3,1) entirely (the centre is the whole centralizer).
+
+\textbf{Radical dichotomy (measured, no interpretation).} Soft kernels carry an \emph{abelian} (translational) radical; deep kernels carry a \emph{Heisenberg} radical (h$_{3}$/h$_{5}$, canonical pairs in rad/Z, weights $\pm $1). Two species: translational $\perp $ symplectic.
+
+\textbf{Load-bearing qualifiers.} This is an \emph{enumeration of signatures n $\leq $ 6}, not an arbitrary-n theorem (the mechanism derivation for all n is the named tail, closed at \S{}3). "Engine compactness $\Longleftrightarrow $ q = 1" holds \emph{within the enumeration}. The classification is by structural invariants over the enumerated signatures; matching invariants are not claimed to pin the isomorphism class beyond the cases exhibited.
+
+\emph{Address:} probes S933, S935, S937, S940 (\texttt{src/symbolic/}, each with its reference log). \emph{Citation anchor:} reductive$\ltimes $nilradical --- Springer--Steinberg 1970, CM 6.1.3; the real so(p,q) table is the white spot (nearest, DLS 2001, gives closures, not structure).
+
+
+\section*{\S{}3. The all-n centralizer form}
+
+\textbf{Theorem (centralizer form, all n).} The mechanism is derived for all n --- not enumerated --- by solving [M, N] = 0 in block-symbolic form (a matrix symbol with symbolic kernel dimension d); the resulting form is n-independent, obtained by \emph{solving} the equations so($\eta $) $\wedge $ [M, N] = 0, not by fitting. In two families:
+
+\begin{itemize}
+\item \textbf{rank-0:} c(N) $\cong $ (sp(2,$\mathbb{R}$) $\oplus $ so($\eta $|G)) $\ltimes $ h\_\{2d+1\}, with d = n $-$ 4 and $\eta $|G of signature (p$-$2, q$-$2); the module is F$_{2}$ $\otimes $ V\_d, and \emph{the centre is born from [module, module]} --- the Heisenberg structure is not postulated, it falls out. dim c(N) = d(d$-$1)/2 + 2d + 4.
+\item \textbf{rank-1:} c(N) $\cong $ $\mathbb{R}$ $\oplus $ (so($\eta $|G$'$) $\ltimes $ $\mathbb{R}$\textasciicircum{}\{d$'$\}), with d$'$ = n $-$ 3 and $\eta $|G$'$ of signature (p$-$2, q$-$1); dim c(N) = d$'$(d$'$+1)/2 + 1. Here \emph{the Levi is compact iff q = 1} is now a \textbf{theorem} (definiteness of (p$-$2, q$-$1) holds iff q = 1), not an empirical observation.
+\end{itemize}
+
+\textbf{Load-bearing qualifiers.} Only \emph{wedge} nilpotents (rank N = 2; higher Jordan types are a named tail). The derivation is machine-symbolic (block\_collapse) plus instance validation on n = 5--7 by span-equality (6/6) plus the closed form checked against all 15 measured centralizer dimensions (8/8 dimension classes), with the n = 8 control independently reproducing the rank-0 closed form at d = 4 (dim 18, h$_{9}$, Levi so(2,1) $\oplus $ so(2,2); Lane-B visa J-0444); the orbit representative of a wedge is the Witt representative (cited, multiplicity 0). \emph{A Lean-level formal proof is the endgame, not this act:} the free/linked/zero split of the block decomposition is \emph{read} from the symbolic equations, not auto-solved end-to-end --- the guard is the span-equality instance check on n = 5--7 (Lane-B visa J-0423).
+
+\emph{Address:} probe S952 (\texttt{src/symbolic/}, with its reference log). \emph{Citation anchor:} the all-n centralizer form for so(p,q) nilpotents is a white spot; its components (Levi decomposition, sl(2)-modules, the Heisenberg parabolic --- Jia, arXiv:2501.12406) are cited.
+
+\section*{\S{}4. The bridge: "construct = output"}
+
+For each core we \emph{exhibit} an explicit two-sided isomorphism (bt\_verify) between the centralizer core and the construct, given by explicit P/Q-aligned rational matrices (S946) --- we do \textbf{not} appeal to an existence theorem (Levi--Malcev). Presenting the isomorphism, rather than invoking its existence, is exactly the machine-verifiable form used in \S{}5.
+
+\emph{Address:} src/symbolic/S946\_w33\_leg2b\_iso\_export.json (6 isomorphisms, n = 5, 6); S946\_w33\_leg2b\_bt\_verify\_iso\_blind.py.
+
+\section*{\S{}5. Machine verification}
+
+The explicit isomorphisms are verified in Lean 4 / mathlib (v4.32.0), as a fourth layer over the symbolic probes.
+
+\begin{itemize}
+\item \textbf{A1} --- the (2,2) rank-0 core: centralizer of dimension 4 = so(2,1) $\oplus $ $\mathbb{R}$ (centre); 16 theorems kernel-checked (So21.lean).
+\item \textbf{A2 --- the full centralizer c(N), 6/6} (the $\mathbb{R}$-centre for rank-1 and the reductive centre for rank-0 are included): So51r1 $\cdot $ So42r1 $\cdot $ So33r1 (rank-1, full dim 7 = core $\oplus $ $\mathbb{R}$) and So32r0 $\cdot $ So42r0 $\cdot $ So33r0 (rank-0; the deep n=6 cases dim 9 = (sp(2,$\mathbb{R}$) $\oplus $ so($\eta $|G)) $\ltimes $ h$_{5}$, the (3,2) case dim 6). 432 theorems, build clean.
+\end{itemize}
+
+\textbf{Axiom audit.} $\#print axioms$ returns [propext, Classical.choice, Quot.sound] on every reported theorem --- with \textbf{no} $sorry$ and \textbf{no} \texttt{native\_decide} (the tactic is decidable $simp$/\texttt{norm\_num}; \texttt{native\_decide} is deliberately avoided, being outside the trusted kernel via \texttt{Lean.ofReduceBool}).
+
+\textbf{Honest boundary.} Lean proves \{the basis is linearly independent, lies in c(N), and closes with the measured bracket tables\}; that the basis is \emph{all} of c(N) (dimension-completeness) is the symbolic probe (S933), not Lean.
+
+\textbf{Signature instance of the reductive centre so($\eta $|G) = so(p$-$2, q$-$2).} For the deep n=6 rank-0 cores the reductive centre is the compact so(2) or the non-compact boost so(1,1) according to the signature: So42r0 (4,2) $\to $ the extra generator W satisfies W$^{3}$ = $-$W (minimal polynomial x(x$^{2}$+1), eigenvalues $\pm $i) $\to $ \textbf{compact so(2)} ((2,0) definite); So33r0 (3,3) $\to $ W$^{3}$ = +W (x(x$^{2}$$-$1), eigenvalues $\pm $1) $\to $ \textbf{boost so(1,1)} ((1,1) indefinite) --- at an \emph{identical} core mechanism sp(2,$\mathbb{R}$) $\ltimes $ h$_{5}$. Both $W \in  \mathfrak{so}(\eta )$ and the eigenvalue-type invariant $W^{3} = \mp W$ are named and kernel-checked (theorems \texttt{B8\_inSO}, \texttt{B8\_cube}). (Note: W$^{2}$ is \emph{not} $\pm $1 on the full space --- only on its 2-plane; the clean full-matrix invariant of the eigenvalue type is W$^{3}$ = $\mp $W.)
+
+\emph{Address:} Lean project in \texttt{lean/VGLean/}; data \texttt{lean/artifacts/gen\_A2\_iso.py}, \texttt{src/symbolic/S946\_w33\_leg2b\_iso\_export.json}. \emph{Strongest card:} machine verification renders our explicit real centralizers irrefutable --- the literature gives the framework; we give verified instances in the white spot.
+
+\section*{\S{}6. Positioning: three documented gaps}
+
+The novelty rests on three statements absent from the literature we surveyed, each standing on a cited scaffold:
+
+1. \textbf{A real so(p,q) Levi$\ltimes $radical table} (signature-resolved) --- a gap; the nearest, \DJ{}okovi\'{c}--Lemire--Sekiguchi    2001, gives the closure order, not the structure.
+
+2. \textbf{The affine $\Longleftrightarrow $ Jacobi dichotomy} classifying wedge centralizers for n $\leq $ 6 --- a gap (a new packaging; the    components --- Eichler--Zagier; Berndt--Schmidt; Berceanu (explicit sp$\ltimes $Heisenberg commutators) --- are cited).
+
+3. \textbf{The "compact-Levi $\Longleftrightarrow $ q = 1" biconditional} --- not written down anywhere as a theorem. It is \emph{reinforced    by machine instances} (\S{}5): kernel-checked on both sides at an identical core --- So42r0 compact so(2) $\perp $    So33r0 boost so(1,1). We state "verified instances in a white spot," \textbf{not} "an $\forall $-theorem    kernel-checked" (the $\forall $-biconditional is proved from signed-tableau definiteness --- signed Young diagrams,    Neuttiens--Pierard de Maujouy 2026; Lean supplies instances).
+
+\textbf{Reviewer risk.} "The components are known" $\to $ the components, yes; but the dichotomy-as-classification for so(p,q) n $\leq $ 6 and the signature biconditional are not written down; DLS 2001 does closures, not structure.
+
+\textbf{Card formulation (no over-claim).} "The first explicit real \textbf{machine-verified instances} of the signature splitting of the reductive centre so($\eta $|G) = so(p$-$2, q$-$2); the general form is \emph{enumerative}." This holds the boundary: the instances are kernel-checked $\perp $ the general $\forall $-biconditional is signed-tableau (not to be re-claimed as "a theorem kernel-checked").
+
+\section*{References}
+
+1. D. H. Collingwood, W. M. McGovern, \emph{Nilpotent Orbits in Semisimple Lie Algebras}, Van Nostrand Reinhold, 1993.
+
+2. T. A. Springer, R. Steinberg, "Conjugacy classes," LNM \textbf{131}, Springer, 1970, pp. 167--266.
+
+3. D. \v{Z}. \DJ{}okovi\'{c}, N. Lemire, J. Sekiguchi, \emph{Tohoku Math. J.} \textbf{53}(3) (2001) 395--442, DOI 10.2748/tmj/1178207418.
+
+4. D. \v{Z}. \DJ{}okovi\'{c}, \emph{J. Algebra} \textbf{112} (1988) 503--524; \textbf{116} (1988) 196--207.
+
+5. A. P. Babinski, D. I. Stewart, arXiv:1611.00937 (2016); \emph{J. Pure Appl. Algebra}.
+
+6. M. Eichler, D. Zagier, \emph{The Theory of Jacobi Forms}, Progr. Math. \textbf{55}, Birkh\"{a}user, 1985.
+
+7. R. Berndt, R. Schmidt, \emph{Elements of the Representation Theory of the Jacobi Group}, Progr. Math. \textbf{163}, Birkh\"{a}user, 1998.
+
+8. S. Berceanu, arXiv:math/0604381; arXiv:1903.10721.
+
+9. G. Neuttiens, J. Pierard de Maujouy, arXiv:2604.01427 (2026).
+
+10. B. Jia, "Minimal Nilpotent Orbits of type D and E," arXiv:2501.12406.
+
+
+\emph{Provenance (\S{}0, per preprint-1):} no result depends on a physical reading of any object, nor asserts one.
+
+\end{document}

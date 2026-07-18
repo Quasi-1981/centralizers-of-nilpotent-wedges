@@ -1,0 +1,15 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Python
+__pycache__/
+*.pyc
+
+# Lean build (source only; mathlib fetched via `lake exe cache get`)
+/lean/VGLean/.lake/

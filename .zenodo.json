@@ -1,0 +1,33 @@
+{
+  "title": "Centralizers of nilpotent wedges in real orthogonal Lie algebras so(p,q): a signature-resolved Levi-radical map (Geometry of the vacuum, floor −1)",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "description": "For a rank-2 nilpotent (a wedge) in a real orthogonal Lie algebra so(p,q), the centralizer decomposes as a reductive part in semidirect product with a nilradical — a framework classical over algebraically closed fields (Springer-Steinberg; Collingwood-McGovern). We give the signature-resolved real form of this decomposition for the enumerated signatures n = p+q at most 6: the non-abelian part is exhausted by four classes, each a three-dimensional engine in semidirect product with a nilpotent module, falling into a dichotomy between the affine type and the Jacobi type. The governing mechanism is obtained for all n in block-symbolic form (by solving a bracket equation, not by fitting). A signature biconditional — for the soft (rank-1) family, the reductive Levi is compact if and only if q = 1 — follows from a definiteness condition. The explicit isomorphisms are machine-verified in Lean 4 / mathlib (kernel-checked; axioms propext, Classical.choice, Quot.sound; no native_decide). Three statements — the signature-resolved dichotomy table, the all-n centralizer form, and the soft-family compact-Levi biconditional — are absent from the literature surveyed (the nearest, Djokovic-Lemire-Sekiguchi 2001, gives the closure order, not centralizer structure). No physical reading of any object is made or implied.",
+  "license": "CC-BY-4.0",
+  "version": "1.0.0",
+  "language": "eng",
+  "keywords": [
+    "Lie algebra so(p,q)",
+    "nilpotent orbit",
+    "centralizer",
+    "Levi decomposition",
+    "signature",
+    "Heisenberg algebra",
+    "Jacobi group",
+    "real reductive group",
+    "machine-checked proof",
+    "Lean mathlib"
+  ],
+  "creators": [
+    {
+      "name": "Sobol, Volodymyr"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Claude Opus 4.8 (Anthropic)",
+      "type": "Other"
+    }
+  ],
+  "notes": "Text: CC-BY-4.0. Code: Apache-2.0. Contributors listed above are AI models used in the work; per-artifact attribution is recorded in the git history (Co-Authored-By trailers)."
+}

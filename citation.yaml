@@ -1,0 +1,78 @@
+# ★ДЖЕРЕЛО МЕТАДАНИХ ПУБЛІКАЦІЇ — ПРЕПРИНТ-2 (алгебраїчний шар).
+#
+# ДРАФТ з PLACEHOLDER'ами (lane-C S987, за арбітражем Бети). Окрема DOI-серія =
+# зона автора: DOI + date_released = 'TBD', автор фіналізує на релізі через Zenodo.
+# Драфт з placeholder НЕ комітить автора — легально (Бета, 2026-07-18).
+#
+# Звідси gen_preprint2_tex.py бере title/series/author/date для .tex-преамбули.
+# Правило-10: генероване (.tex) руками не правити — правиш DRAFT/цей yaml, тоді генератор.
+
+# Тайтл — author-approved (Омега передав слово автора 2026-07-18).
+title: "Centralizers of nilpotent wedges in real orthogonal Lie algebras so(p,q): a signature-resolved Levi-radical map"
+
+# Серійний підпис програми (фіксований, як препринт-1). ПРОВЕНАНС, не претензія (§0):
+# жоден результат не залежить від фізичного прочитання й не стверджує його.
+series: "Geometry of the vacuum, floor −1"
+
+version: "1.0.0"
+
+# ★PLACEHOLDER — автор фіналізує на релізі (дата = день релізу, як препринт-1).
+date_released: "TBD"
+
+# ★PLACEHOLDER — окрема DOI-серія, автор реєструє через GitHub→Zenodo на релізі.
+# НЕ вигадувати id (порожнє чесніше за фальшивий, як orcid у препринті-1).
+doi: "TBD — author finalizes on release (separate Zenodo DOI series from preprint-1)"
+
+# Людина в creators (юридична вага авторства); моделі поіменно в contributors.
+creators:
+  - name: "Sobol, Volodymyr"
+    affiliation: null
+    orcid: null
+
+contributors:
+  - name: "Claude Opus 4.8 (Anthropic)"
+    type: "Other"
+
+license_text: "CC-BY-4.0"
+license_code: "Apache-2.0"
+
+upload_type: "publication"
+publication_type: "preprint"
+
+# Зміст: алгебраїчний шар — централізатори нільпотентних клинів у дійсних so(p,q).
+# Lean/mathlib верифікація (A1-A3, kernel-checked) = supplementary.
+description_short: "A signature-resolved Levi-radical map of nilpotent-wedge centralizers in real so(p,q), with machine-verified explicit isomorphisms (Lean/mathlib, kernel-checked)."
+
+# ★3-4 рядки; кожен клейм несе кваліфікатор (правило реєстру §12 чинне і тут). Проза, не символи.
+description: |
+  For a rank-2 nilpotent (a wedge) in a real orthogonal Lie algebra so(p,q), the
+  centralizer decomposes as a reductive part in semidirect product with a
+  nilradical — a framework classical over algebraically closed fields
+  (Springer-Steinberg; Collingwood-McGovern). We give the signature-resolved real
+  form of this decomposition for the enumerated signatures n = p+q at most 6: the
+  non-abelian part is exhausted by four classes, each a three-dimensional engine
+  in semidirect product with a nilpotent module, falling into a dichotomy between
+  the affine type and the Jacobi type. The governing mechanism is obtained for all
+  n in block-symbolic form (by solving a bracket equation, not by fitting). A
+  signature biconditional — for the soft (rank-1) family, the reductive Levi is
+  compact if and only if q = 1 — follows from a definiteness condition. The
+  explicit isomorphisms are machine-verified in Lean 4 / mathlib (kernel-checked;
+  axioms propext, Classical.choice, Quot.sound; no native_decide). Three
+  statements — the signature-resolved dichotomy table, the all-n centralizer form,
+  and the soft-family compact-Levi biconditional — are absent from the literature
+  surveyed (the nearest, Djokovic-Lemire-Sekiguchi 2001, gives the closure order,
+  not centralizer structure). No physical reading of any object is made or implied.
+
+keywords:
+  - Lie algebra so(p,q)
+  - nilpotent orbit
+  - centralizer
+  - Levi decomposition
+  - signature
+  - Heisenberg algebra
+  - Jacobi group
+  - real reductive group
+  - machine-checked proof
+  - Lean mathlib
+
+language: "eng"
