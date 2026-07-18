@@ -1,13 +1,14 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it as below."
 title: "Centralizers of nilpotent wedges in real orthogonal Lie algebras so(p,q): a signature-resolved Levi-radical map (Geometry of the vacuum, floor −1)"
-version: "1.0.0"
+version: "1.0.1"
 type: software
 authors:
   - family-names: "Sobol"
     given-names: "Volodymyr"
 license: CC-BY-4.0
-doi: "TBD — author finalizes on release (separate Zenodo DOI series from preprint-1)"
+doi: "10.5281/zenodo.21429542"
+date-released: "2026-07-18"
 keywords:
   - "Lie algebra so(p,q)"
   - "nilpotent orbit"

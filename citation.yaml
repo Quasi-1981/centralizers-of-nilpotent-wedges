@@ -14,14 +14,18 @@ title: "Centralizers of nilpotent wedges in real orthogonal Lie algebras so(p,q)
 # жоден результат не залежить від фізичного прочитання й не стверджує його.
 series: "Geometry of the vacuum, floor −1"
 
-version: "1.0.0"
+# Поточна остання версія на Zenodo = 1.0.1 (додала окремий читабельний PDF).
+version: "1.0.1"
 
-# ★PLACEHOLDER — автор фіналізує на релізі (дата = день релізу, як препринт-1).
-date_released: "TBD"
+# Реліз на Zenodo (parent concept 21429542): 1.0.0 та 1.0.1 обидві 2026-07-18.
+date_released: "2026-07-18"
 
-# ★PLACEHOLDER — окрема DOI-серія, автор реєструє через GitHub→Zenodo на релізі.
-# НЕ вигадувати id (порожнє чесніше за фальшивий, як orcid у препринті-1).
-doi: "TBD — author finalizes on release (separate Zenodo DOI series from preprint-1)"
+# ★CONCEPT-DOI (all-versions) — АДРЕСА роботи, завжди резолвиться на найновішу версію
+# (зараз 1.0.1 з PDF). Цитувати ЦЕ. Версія-DOI: 1.0.0 = 10.5281/zenodo.21429543,
+# 1.0.1 = свій (concept веде на неї — окремий id не потрібен для цитування).
+# ★ФЕНС (як препринт-1): цей `doi` їде В CITATION.cff, але НЕ в .zenodo.json — там поле
+# `doi` означало б «маю ЗОВНІШНІЙ DOI» і зламало б версіонування (gen_citation це тримає).
+doi: "10.5281/zenodo.21429542"
 
 # Людина в creators (юридична вага авторства); моделі поіменно в contributors.
 creators:
